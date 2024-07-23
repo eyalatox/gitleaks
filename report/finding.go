@@ -30,11 +30,12 @@ type Finding struct {
 	// Entropy is the shannon entropy of Value
 	Entropy float32
 
-	Author  string
-	Email   string
-	Date    string
-	Message string
-	Tags    []string
+	Author   string
+	Email    string
+	Date     string
+	Message  string
+	Tags     []string
+	Metadata map[string]string
 
 	// Rule is the name of the rule that was matched
 	RuleID string

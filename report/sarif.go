@@ -105,9 +105,10 @@ func getResults(findings []Finding) []Results {
 				Author:        f.Author,
 			},
 			Properties: Properties{
-				Tags:    f.Tags,
-				Match:   f.Match,
-				Entropy: f.Entropy,
+				Tags:     f.Tags,
+				Match:    f.Match,
+				Entropy:  f.Entropy,
+				Metadata: f.Metadata,
 			},
 		}
 		results = append(results, r)
@@ -209,9 +210,10 @@ type Locations struct {
 }
 
 type Properties struct {
-	Tags    []string `json:"tags"`
-	Match   string   `json:"match"`
-	Entropy float32  `json:"entropy"`
+	Tags     []string          `json:"tags"`
+	Match    string            `json:"match"`
+	Entropy  float32           `json:"entropy"`
+	Metadata map[string]string `json:"metadata"`
 }
 
 type Results struct {

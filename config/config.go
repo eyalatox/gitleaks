@@ -34,6 +34,7 @@ type ViperConfig struct {
 		Keywords    []string
 		Path        string
 		Tags        []string
+		Metadata    map[string]string
 
 		Allowlist struct {
 			RegexTarget string
@@ -102,6 +103,10 @@ func (vc *ViperConfig) Translate() (Config, error) {
 			r.Tags = []string{}
 		}
 
+		if r.Metadata == nil {
+			r.Metadata = make(map[string]string)
+		}
+
 		var configRegex *regexp.Regexp
 		var configPathRegex *regexp.Regexp
 		if r.Regex == "" {
@@ -123,6 +128,7 @@ func (vc *ViperConfig) Translate() (Config, error) {
 			Entropy:     r.Entropy,
 			Tags:        r.Tags,
 			Keywords:    r.Keywords,
+			Metadata:    r.Metadata,
 			Allowlist: Allowlist{
 				RegexTarget: r.Allowlist.RegexTarget,
 				Regexes:     allowlistRegexes,

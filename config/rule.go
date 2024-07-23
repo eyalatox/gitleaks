@@ -37,6 +37,9 @@ type Rule struct {
 	// keyword(s) are in the content being scanned.
 	Keywords []string
 
+	// Metadata is a map of strings used for arbitrary metadata
+	Metadata map[string]string
+
 	// Allowlist allows a rule to be ignored for specific
 	// regexes, paths, and/or commits
 	Allowlist Allowlist
