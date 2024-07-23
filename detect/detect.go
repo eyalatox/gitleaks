@@ -230,6 +230,7 @@ func (d *Detector) detectRule(fragment Fragment, rule config.Rule) []report.Find
 				RuleID:      rule.RuleID,
 				Match:       fmt.Sprintf("file detected: %s", fragment.FilePath),
 				Tags:        rule.Tags,
+				Metadata:    rule.Metadata,
 			}
 			return append(findings, finding)
 		}
@@ -283,6 +284,7 @@ func (d *Detector) detectRule(fragment Fragment, rule config.Rule) []report.Find
 			Secret:      secret,
 			Match:       secret,
 			Tags:        rule.Tags,
+			Metadata:    rule.Metadata,
 			Line:        fragment.Raw[loc.startLineIndex:loc.endLineIndex],
 		}
 
