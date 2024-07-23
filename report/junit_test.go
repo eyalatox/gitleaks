@@ -37,6 +37,7 @@ func TestWriteJunit(t *testing.T) {
 					Email:       "johndoe@gmail.com",
 					Date:        "10-19-2003",
 					Tags:        []string{},
+					Metadata:    make(map[string]string),
 				},
 				{
 
@@ -55,6 +56,7 @@ func TestWriteJunit(t *testing.T) {
 					Email:       "",
 					Date:        "",
 					Tags:        []string{},
+					Metadata:    make(map[string]string),
 				},
 			},
 		},
