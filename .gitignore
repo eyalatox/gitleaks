@@ -21,3 +21,5 @@ testdata/expected/report/*.got.*
 *.out
 
 dist/
+
+.vscode/
